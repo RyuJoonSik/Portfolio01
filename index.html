@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="index,follow" />
+    <meta name="description" content="자바스크립트 룰렛 입니다." />
+    <meta property="og:type" content="webapplication" />
+    <meta property="og:title" content="룰렛" />
+    <meta property="og:description" content="자바스크립트 룰렛 입니다." />
+    <title>자바스크립트 룰렛</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="portrait.css" media="(orientation:portrait)" />
+  </head>
+  <body>
+    <!-- nav -->
+    <nav id="nav" class="navigation">
+      <button id="btnHideNav" class="button-hide button-hide--nav"></button>
+      <ul id="navList" class="navigation__lists"></ul>
+    </nav>
+    <!-- //nav -->
+    <!-- main -->
+    <section id="main" class="main">
+      <h1 class="main__title">자바스크립트 룰렛</h1>
+      <div class="content">
+        <!-- 소개 -->
+        <section class="intro">
+          <h2 id="intro" class="intro__title">소개</h2>
+          <article class="focus">
+            <h3 id="focus" class="focus__title">목표</h3>
+            <p class="focus__content">
+              자바스크립트의 여러 프레임워크 학습에 들어가기 앞서 내용을
+              복습하고, 개발 도구(Babel, Webpack) 사용법 익히기.
+            </p>
+          </article>
+          <article class="suject">
+            <h3 id="subject" class="subject__title">주제</h3>
+            <p class="subject__content">
+              친구들과 만나면 어디로 갈지 단 번에 정하지 못해 대신 정해줄 방법이
+              있으면 좋을 것 같아 간단한 룰렛을 만들기로 하였습니다.
+            </p>
+          </article>
+          <article class="result">
+            <h3 id="result" class="result__title">결과물</h3>
+            <figure class="roulette">
+              <div id="roulette" class="roulette__wrapper">
+                <canvas id="canvas" class="roulette__canvas" tabindex="0"
+                  >현재 브라우저는 canvas 태그를 정상 지원하지않습니다.</canvas
+                >
+                <button
+                  id="btnHide"
+                  class="button-hide button-hide--roulette"
+                ></button>
+                <ul id="districtList" class="district"></ul>
+                <button id="startBtn" class="roulette__button-start">
+                  <span>START</span>
+                </button>
+              </div>
+              <figcaption>
+                AJAX를 통해 받아온 JSON파일로 코드를 작성하였습니다.
+              </figcaption>
+            </figure>
+          </article>
+        </section>
+        <!-- //소개 -->
+        <!-- 개발 환경 -->
+        <section class="environment">
+          <h2 id="environment" class="environment__title">개발 환경</h2>
+          <article class="browser">
+            <h3 id="browser" class="browser__title">브라우저</h3>
+            <ul class="browser__lists">
+              <li class="browser__list browser__list--ie">IE11</li>
+              <li class="browser__list browser__list--chrome">Chrome</li>
+            </ul>
+          </article>
+          <article class="language">
+            <h3 id="language" class="language__title">언어</h3>
+            <ul class="language__lists">
+              <li class="language__list language__list--html">HTML</li>
+              <li class="language__list language__list--css">CSS</li>
+              <li class="language__list language__list--js">JS</li>
+            </ul>
+          </article>
+          <article class="editor">
+            <h3 id="editor" class="editor__title">에디터</h3>
+            <ul class="editor__lists">
+              <li class="editor__list editor__list--vsc">VSC</li>
+              <li class="editor__list editor__list--prettier">Prettier</li>
+              <li class="editor__list editor__list--eslint">ESLint</li>
+            </ul>
+          </article>
+          <article class="package">
+            <h3 id="package" class="package__title">개발 도구</h3>
+            <ul class="package__lists">
+              <li class="package__list package__list--eslint">ESLint</li>
+              <li class="package__list package__list--prettier">Prettier</li>
+              <li class="package__list package__list--babel">Babel</li>
+              <li class="package__list package__list--webpack">Webpack</li>
+            </ul>
+          </article>
+        </section>
+        <!-- //개발 환경 -->
+        <!-- 개발 과정 -->
+        <section class="process">
+          <h2 id="process" class="process__title">개발 과정</h2>
+          <article class="order">
+            <h3 id="order" class="order__title">순서</h3>
+            <ul>
+              <li>
+                <ul class="order__lists">
+                  <li class="order__list order__list--odd order__list--html">
+                    HTML
+                  </li>
+                  <li class="order__list order__list--odd order__list--css">
+                    CSS
+                  </li>
+                  <li class="order__list order__list--odd order__list--js">
+                    JS
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <ul class="order__lists order__lists--last">
+                  <li class="order__list order__list--even order__list--babel">
+                    바벨
+                  </li>
+                  <li class="order__list order__list--even order__list--node">
+                    Node.js 서버
+                  </li>
+                  <li
+                    class="order__list order__list--even order__list--webpack"
+                  >
+                    웹팩
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </article>
+          <article class="description">
+            <h3 id="descriptionHTML" class="description__title">HTML</h3>
+            <dl>
+              <dt>의미론적 요소(Semantic element)</dt>
+              <dd>article 요소와 section 요소를 사용하였습니다.</dd>
+              <dt>접근성(Accessibility)</dt>
+              <dd>canvas 태그에 대체 텍스트를 삽입하였습니다.</dd>
+              <dd>콘텐츠 구분을 위해 구분선, 밑줄을 추가하였습니다.</dd>
+              <dd>
+                텍스트와 배경의 명도 대비는 4.5:1 이상으로 조정하였습니다.
+              </dd>
+              <dd>키보드 이동만으로도 사용할 수 있도록 하였습니다.</dd>
+              <dt>검색 엔진 최적화(SEO)</dt>
+              <dd>관련 메타 태그를 작성하였습니다.</dd>
+              <dd>파비콘을 추가하였습니다.</dd>
+              <dd>robot.txt 파일을 작성해 보았습니다.</dd>
+              <dt>호환성(Cross Browsing)</dt>
+              <dd>
+                IE11와 크롬에서 공통으로 지원하는 태그와 속성을 사용하였습니다.
+              </dd>
+            </dl>
+          </article>
+          <article class="description">
+            <h3 id="descriptionCSS" class="description__title">CSS</h3>
+            <dl>
+              <dt>방법론(Methodology)</dt>
+              <dd>BEM 방법론을 사용하였습니다.</dd>
+              <dt>반응형(Responsive)</dt>
+              <dd>
+                CSS의 미디어 쿼리를 사용하였고, Pixel ratio(픽셀 비율)에 따라
+                캔버스가 렌더링 되도록 하였습니다.
+              </dd>
+            </dl>
+          </article>
+          <article class="description">
+            <h3 id="descriptionJS" class="description__title">JS</h3>
+            <p class="description__content">
+              IE11에서 지원하는 함수와 ES5로 작성한 뒤 크롬에서 지원하는 함수와
+              ES6+ 이상으로 다시 작성하였습니다.
+            </p>
+            <dl>
+              <dt>변수 선언</dt>
+              <dd>var, const, let의 특징을 구별하여 사용하였습니다.</dd>
+              <dt>비동기 통신(AJAX)</dt>
+              <dd>
+                IE11에서는 XMLHttpRequest, 크롬에서는 fetch()를 사용하였습니다.
+              </dd>
+              <dt>편의성</dt>
+              <dd>
+                크롬에서는 템플릿 리터럴, 구조 분해 할당을 사용하였습니다.
+              </dd>
+              <dt>DOM 제어</dt>
+              <dd>
+                첫 초기화에만 innerHTML을, 이 후로는 객체를 생성하여
+                추가하였습니다.
+              </dd>
+              <dt>클릭 이벤트</dt>
+              <dd>
+                버블링을 통해 이벤트가 해당 요소에 전파되었을 경우에만 핸들러가
+                실행되도록 하였습니다.
+              </dd>
+              <dt>데이터 타입 검증</dt>
+              <dd>
+                메서드의 매개변수로 넘어온 인자의 타입을 검증하는 함수를
+                추가하였습니다.
+              </dd>
+              <dt>디자인 패턴</dt>
+              <dd>싱글톤, 네임스페이스, 모듈 패턴을 사용해 보았습니다.</dd>
+              <dd>싱글톤은 클로져를 이해하는 데 도움이 되었습니다.</dd>
+              <dd>크롬에서는 ES6의 모듈(import, export)을 사용하였습니다.</dd>
+              <dt>화살표 함수</dt>
+              <dd>편의성보다 특징을 이해하는 데 중점을 두었습니다.</dd>
+              <dt>private 접근자</dt>
+              <dd>
+                외부에서 접근할 필요가 없는 메서드와 필드는 private로
+                제한하였습니다.
+              </dd>
+            </dl>
+          </article>
+          <article class="description">
+            <h3 id="descriptionBabel" class="description__title">바벨</h3>
+            <ul class="description__lists">
+              <li class="description__list">
+                ES6+ 문법으로 작성된 코드를 ES5로 변환시켜 주었습니다.
+              </li>
+              <li class="description__list">
+                IE11(브라우저)에서 지원하지 않는 함수들은 기존에 작성해 둔 ES5로
+                폴리필을 적용시켜 주었습니다.
+              </li>
+              <li class="description__list">
+                바벨 폴리필을 추가 설치하여 사용하였습니다.
+              </li>
+            </ul>
+          </article>
+          <article class="description">
+            <h3 id="descriptionServer" class="description__title">
+              Node.js 서버
+            </h3>
+            <p class="description__content">
+              Node.js 기본 모듈을 사용하여 간단한 서버를 만들어 보았습니다.
+            </p>
+            <p class="description__warning">
+              바벨을 통해 변환된 코드 중 require 함수가 사용된 것을 보고,
+              Node.js 환경을 통해 무난히 실행될 것이란 예상에 서버를 만들어 본
+              것이었지만 응답받은 파일은 결국 client-side(브라우저)에서 실행된
+              다는 사실을 이후에 알게 되었습니다.
+            </p>
+          </article>
+          <article class="description">
+            <h3 id="descriptionWebpack" class="description__title">웹팩</h3>
+            <p class="description__content">
+              웹팩을 통해 분산되어 있는 외부 모듈들을 하나의 파일로 통합시켜
+              주었습니다. 바벨 로더를 통해 코드를 변환 시켜주는 작업도 함께해
+              주었습니다.
+            </p>
+          </article>
+        </section>
+        <!-- //개발 과정 -->
+        <!-- 마무리 -->
+        <section class="finish">
+          <h2 class="finish__title">마무리</h2>
+          <article class="inspection">
+            <h3 id="inspection" class="inspection__title">점검</h3>
+            <p>
+              레퍼런스 사이트와 크롬 개발자 도구를 통해 불필요하거나 지양하는
+              코드를 수정하였습니다.
+            </p>
+            <dl>
+              <dt>HTML</dt>
+              <dd>
+                <a
+                  href="https://validator.w3.org/"
+                  rel="noreferrer"
+                  target="_blank"
+                  class="inspection_link"
+                  >W3C HTML Validator 바로 가기</a
+                >
+              </dd>
+              <dt>CSS</dt>
+              <dd>
+                <a
+                  href="https://jigsaw.w3.org/css-validator/"
+                  rel="noreferrer"
+                  target="_blank"
+                  class="inspection_link"
+                  >W3C CSS Validator 바로 가기</a
+                >
+              </dd>
+              <dd>
+                <a
+                  href="http://csslint.net/"
+                  rel="noreferrer"
+                  target="_blank"
+                  class="inspection_link"
+                  >CSSLint 바로 가기</a
+                >
+              </dd>
+              <dt>코딩 컨벤션</dt>
+              <dd>
+                <a
+                  href="https://ui.toast.com/fe-guide/ko_HTMLCSS"
+                  rel="noreferrer"
+                  target="_blank"
+                  class="inspection_link"
+                  >TOAST UI HTML/CSS 코딩 컨벤션 바로 가기</a
+                >
+              </dd>
+              <dd>
+                <a
+                  href="https://ui.toast.com/fe-guide/ko_CODING-CONVENTION"
+                  rel="noreferrer"
+                  target="_blank"
+                  class="inspection_link"
+                  >TOAST UI JS 코딩 컨벤션 바로 가기</a
+                >
+              </dd>
+              <dd>
+                <a
+                  href="http://www.tutor4u.co.kr/data/member/test16.pdf"
+                  rel="noreferrer"
+                  target="_blank"
+                  class="inspection_link"
+                  >NHN HTML/CSS 코딩 컨벤션 바로 가기</a
+                >
+              </dd>
+              <dt>성능 개선</dt>
+              <dd>
+                <a
+                  href="https://ui.toast.com/fe-guide/ko_PERFORMANCE"
+                  rel="noreferrer"
+                  target="_blank"
+                  class="inspection_link"
+                  >NHN HTML/CSS 코딩 컨벤션 바로 가기</a
+                >
+              </dd>
+            </dl>
+          </article>
+        </section>
+        <!-- //마무리 -->
+      </div>
+    </section>
+    <!-- //main -->
+    <script src="main.js"></script>
+    <script src="roulette.js"></script>
+  </body>
+</html>

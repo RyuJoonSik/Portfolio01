@@ -1,0 +1,90 @@
+@charset "utf-8";
+/* 미디어 쿼리 */
+@media (orientation: portrait) {
+  p {
+    font-size: 1rem;
+  }
+  h2 {
+    padding-top: 1rem;
+    font-size: 2rem;
+  }
+  h3 {
+    font-size: 1.5rem;
+  }
+  dt {
+    font-size: 2.1vh;
+  }
+  dd,
+  .description__list {
+    font-size: 1.8vh;
+  }
+  .content {
+    padding: 0 1rem 1rem;
+  }
+  .navigation {
+    right: 100%;
+    width: 35%;
+    height: auto;
+    max-height: 100vh;
+  }
+  .main {
+    margin: 0;
+  }
+  .roulette {
+    width: 100%;
+  }
+  .navigation--show {
+    right: auto;
+  }
+  .button-hide {
+    display: block;
+  }
+  .district {
+    display: none;
+    overflow: auto;
+    left: auto;
+    right: 0;
+    top: 4rem;
+    max-height: calc(100% - 4rem);
+  }
+  .district--on {
+    display: block;
+  }
+  .district__name,
+  .sub-district__name {
+    text-align: center;
+  }
+  .browser__lists,
+  .language__lists,
+  .editor__lists,
+  .package__lists,
+  .order__lists {
+    width: 100%;
+  }
+  .browser__list,
+  .language__list,
+  .editor__list,
+  .package__list,
+  .order__list {
+    font-size: 2vh;
+    line-height: 3;
+  }
+  .order__lists {
+    padding: 0;
+  }
+  .order__list {
+    float: none;
+    width: 70%;
+    margin: 0 auto 4vh;
+  }
+  .order__list::after {
+    top: 100%;
+    left: 50%;
+    line-height: 4vh;
+    transform: translateX(-50%);
+    content: "↓";
+  }
+  .order__list--webpack::after {
+    content: "";
+  }
+}
