@@ -113,11 +113,11 @@ a {
 .button-hide--nav {
   position: fixed;
   left: 0;
-  z-index: 1;
+  z-index: 10;
   opacity: 0.5;
 }
 .button-hide--nav-clicked {
-  left: 35%;
+  left: 38%;
 }
 .navigation__lists {
   margin: 0;
