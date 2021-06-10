@@ -1,9 +1,6 @@
 @charset "utf-8";
 /* 미디어 쿼리 */
 @media (orientation: portrait) {
-  button {
-    outline: none;
-  }
   p {
     font-size: 1rem;
   }
