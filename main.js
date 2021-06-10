@@ -18,9 +18,7 @@ for (var i = 0; i < H2S_LENGTH; i += 1) {
   SPAN.textContent = H2S[i].innerText;
   var parentEl = H2S[i].parentNode;
 
-  for (; parentEl.nodeName !== "SECTION"; parentEl = parentEl.parentNode) {
-    ;
-  }
+  for (; parentEl.nodeName !== "SECTION"; parentEl = parentEl.parentNode) {}
 
   var H3S = document.querySelectorAll(".".concat(parentEl.className, " h3"));
   var UL = document.createElement("ul");
@@ -53,13 +51,33 @@ for (var i = 0; i < H2S_LENGTH; i += 1) {
   NAV_LIST.appendChild(LI);
 }
 
+var prevBtn;
+
 NAV_LIST.addEventListener("click", function (e) {
   if (e.target.nodeName !== "BUTTON") {
     return;
   }
 
-  e.target.classList.toggle("navigation__title--clicked");
-  e.target.nextSibling.classList.toggle("navigation__lists-sub--on");
+  if (prevBtn === e.target.innerText) {
+    e.target.classList.toggle("navigation__title--clicked");
+    e.target.nextSibling.classList.toggle("navigation__lists-sub--on");
+  } else {
+    const LISTS = document.getElementsByClassName("navigation__title");
+    const LENGTH = LISTS.length;
+
+    for (var i = 0; i < LENGTH; i++) {
+      if (LISTS[i].classList.contains("navigation__title--clicked")) {
+        LISTS[i].classList.remove("navigation__title--clicked");
+        LISTS[i].nextSibling.classList.remove("navigation__lists-sub--on");
+        break;
+      }
+    }
+
+    e.target.classList.add("navigation__title--clicked");
+    e.target.nextSibling.classList.add("navigation__lists-sub--on");
+  }
+
+  prevBtn = e.target.innerText;
 });
 NAV_LIST.addEventListener("mouseout", function (e) {
   if (e.target.nodeName !== "BUTTON") {
