@@ -1,1 +1,42 @@
-<!DOCTYPE html><html lang="ko"> <head> <meta charset="UTF-8"/> <meta http-equiv="X-UA-Compatible" content="IE=edge"/> <meta name="viewport" content="width=device-width, initial-scale=1.0"/><!-- 로봇 메타 태그는 페이지 별로 검색로봇의 접근 여부를 제어할 수 있는 정보입니다 noindex : 해당 페이지는 검색 결과에서 제외 nofollow : 해당 페이지 내의 링크를 수집하지 않도록 설정 --> <meta name="robots" content="index,follow"/> <meta name="description" content="목적지 룰렛 입니다."/> <meta property="og:type" content="website"/> <meta property="og:title" content="목적지 룰렛"/> <meta property="og:description" content="목적지 룰렛 입니다."/> <title>목적지 룰렛</title> <link rel="shortcut icon" href="./favicon.ico"/> <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet"/> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/> </head> <body> <div id="wrap" class="wrap"> <header class="header"> <h1 class="header__title">목적지 룰렛</h1> <button id="btnRouletteAdd" tabindex="1" class="header__btn"> <span><i class="header__icon fas fa-plus"></i></span> <span class="ir">설정</span> </button> </header> <section class="main"> <article class="roulette"> <canvas id="canvas" class="roulette__canvas"> 현재 브라우저에서는 canvas 태그를 지원하지 않습니다. </canvas> <button id="btnRouletteStart" class="roulette__btn"><span>START</span></button> </article> </section> </div><script src="./main.js"></script> </body></html>
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <!-- meta, title, link, script, style 순서로 엘리먼트를 선언 -->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- 
+      로봇 메타 태그는 페이지 별로 검색로봇의 접근 여부를 제어할 수 있는 정보입니다 
+      noindex : 해당 페이지는 검색 결과에서 제외
+      nofollow : 해당 페이지 내의 링크를 수집하지 않도록 설정
+    -->
+    <meta name="robots" content="index,follow" />
+    <meta name="description" content="목적지 룰렛 입니다." />
+    <!-- 오픈 그래프 : 사이트가 소셜 미디어로 공유될 때 우선적으로 활용되는 정보 -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="목적지 룰렛" />
+    <meta property="og:description" content="목적지 룰렛 입니다." />
+    <title>목적지 룰렛</title>
+    <link rel="shortcut icon" href="./favicon.ico" />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  </head>
+  <body>
+    <div id="wrap" class="wrap">
+      <header class="header">
+        <h1 class="header__title">목적지 룰렛</h1>
+        <button id="btnRouletteAdd" class="header__btn">
+          <span><i class="header__icon fas fa-plus"></i></span>
+          <span class="ir">설정</span>
+        </button>
+      </header>
+      <section class="main">
+        <article class="roulette">
+          <canvas id="canvas" class="roulette__canvas"> 현재 브라우저에서는 canvas 태그를 지원하지 않습니다. </canvas>
+          <button id="btnRouletteStart" class="roulette__btn"><span>START</span></button>
+        </article>
+      </section>
+    </div>
+    <script src="./main.js"></script>
+  </body>
+</html>
