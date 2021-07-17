@@ -127,16 +127,16 @@
                   b,
                   E = i(h),
                   T = o(E),
-                  S = e(v, y, 3),
-                  x = a(T.length),
-                  w = 0,
+                  x = e(v, y, 3),
+                  w = a(T.length),
+                  S = 0,
                   _ = g || c,
-                  O = n ? _(h, x) : r || p ? _(h, 0) : void 0;
-                x > w;
-                w++
+                  O = n ? _(h, w) : r || p ? _(h, 0) : void 0;
+                w > S;
+                S++
               )
-                if ((d || w in T) && ((b = S((m = T[w]), w, E)), t))
-                  if (n) O[w] = b;
+                if ((d || S in T) && ((b = x((m = T[S]), S, E)), t))
+                  if (n) O[S] = b;
                   else if (b)
                     switch (t) {
                       case 3:
@@ -144,7 +144,7 @@
                       case 5:
                         return m;
                       case 6:
-                        return w;
+                        return S;
                       case 2:
                         u.call(O, m);
                     }
@@ -394,10 +394,10 @@
           E = function () {
             return this;
           };
-        t.exports = function (t, n, r, f, d, T, S) {
+        t.exports = function (t, n, r, f, d, T, x) {
           o(r, n, f);
-          var x,
-            w,
+          var w,
+            S,
             _,
             O = function (t) {
               if (t === d && A) return A;
@@ -422,11 +422,11 @@
             R = ('Array' == n && N.entries) || C;
           if (
             (R &&
-              ((x = i(R.call(new t()))),
+              ((w = i(R.call(new t()))),
               h !== Object.prototype &&
-                x.next &&
-                (l || i(x) === h || (a ? a(x, h) : 'function' != typeof x[y] && u(x, y, E)),
-                c(x, L, !0, !0),
+                w.next &&
+                (l || i(w) === h || (a ? a(w, h) : 'function' != typeof w[y] && u(w, y, E)),
+                c(w, L, !0, !0),
                 l && (p[L] = E))),
             d == m &&
               C &&
@@ -435,14 +435,14 @@
               (A = function () {
                 return C.call(this);
               })),
-            (l && !S) || N[y] === A || u(N, y, A),
+            (l && !x) || N[y] === A || u(N, y, A),
             (p[n] = A),
             d)
           )
-            if (((w = { values: O(m), keys: T ? A : O(g), entries: O(b) }), S))
-              for (_ in w) (v || I || !(_ in N)) && s(N, _, w[_]);
-            else e({ target: n, proto: !0, forced: v || I }, w);
-          return w;
+            if (((S = { values: O(m), keys: T ? A : O(g), entries: O(b) }), x))
+              for (_ in S) (v || I || !(_ in N)) && s(N, _, S[_]);
+            else e({ target: n, proto: !0, forced: v || I }, S);
+          return S;
         };
       },
       7235: function (t, n, r) {
@@ -863,24 +863,24 @@
             b = !(!r || !r.IS_ITERATOR),
             E = !(!r || !r.INTERRUPTED),
             T = a(n, g, 1 + m + E),
-            S = function (t) {
+            x = function (t) {
               return f && u(f), new s(!0, t);
             },
-            x = function (t) {
-              return m ? (e(t), E ? T(t[0], t[1], S) : T(t[0], t[1])) : E ? T(t, S) : T(t);
+            w = function (t) {
+              return m ? (e(t), E ? T(t[0], t[1], x) : T(t[0], t[1])) : E ? T(t, x) : T(t);
             };
           if (b) f = t;
           else {
             if ('function' != typeof (l = c(t))) throw TypeError('Target is not iterable');
             if (o(l)) {
-              for (p = 0, d = i(t.length); d > p; p++) if ((h = x(t[p])) && h instanceof s) return h;
+              for (p = 0, d = i(t.length); d > p; p++) if ((h = w(t[p])) && h instanceof s) return h;
               return new s(!1);
             }
             f = l.call(t);
           }
           for (v = f.next; !(y = v.call(f)).done; ) {
             try {
-              h = x(y.value);
+              h = w(y.value);
             } catch (t) {
               throw (u(f), t);
             }
@@ -947,8 +947,8 @@
           b = l.process,
           E = l.Promise,
           T = p(l, 'queueMicrotask'),
-          S = T && T.value;
-        S ||
+          x = T && T.value;
+        x ||
           ((e = function () {
             var t, n;
             for (y && (t = b.domain) && t.exit(); o; ) {
@@ -982,7 +982,7 @@
                 u.data = c = !c;
               }))),
           (t.exports =
-            S ||
+            x ||
             function (t) {
               var n = { fn: t, next: void 0 };
               i && (i.next = n), o || ((o = n), a()), (i = n);
@@ -1443,15 +1443,15 @@
               delete E[t], n();
             }
           },
-          S = function (t) {
+          x = function (t) {
             return function () {
               T(t);
             };
           },
-          x = function (t) {
+          w = function (t) {
             T(t.data);
           },
-          w = function (t) {
+          S = function (t) {
             a.postMessage(t + '', d.protocol + '//' + d.host);
           };
         (h && v) ||
@@ -1470,21 +1470,21 @@
           }),
           p
             ? (e = function (t) {
-                y.nextTick(S(t));
+                y.nextTick(x(t));
               })
             : m && m.now
             ? (e = function (t) {
-                m.now(S(t));
+                m.now(x(t));
               })
             : g && !l
-            ? ((i = (o = new g()).port2), (o.port1.onmessage = x), (e = u(i.postMessage, i, 1)))
+            ? ((i = (o = new g()).port2), (o.port1.onmessage = w), (e = u(i.postMessage, i, 1)))
             : a.addEventListener &&
               'function' == typeof postMessage &&
               !a.importScripts &&
               d &&
               'file:' !== d.protocol &&
-              !c(w)
-            ? ((e = w), a.addEventListener('message', x, !1))
+              !c(S)
+            ? ((e = S), a.addEventListener('message', w, !1))
             : (e =
                 'onreadystatechange' in f('script')
                   ? function (t) {
@@ -1493,7 +1493,7 @@
                       };
                     }
                   : function (t) {
-                      setTimeout(S(t), 0);
+                      setTimeout(x(t), 0);
                     })),
           (t.exports = { set: h, clear: v });
       },
@@ -1790,9 +1790,9 @@
           b = r(5787),
           E = r(2788),
           T = r(408),
-          S = r(7072),
-          x = r(6707),
-          w = r(261).set,
+          x = r(7072),
+          w = r(6707),
+          S = r(261).set,
           _ = r(5948),
           O = r(9478),
           L = r(842),
@@ -1803,8 +1803,8 @@
           R = r(5112),
           j = r(7871),
           P = r(5268),
-          M = r(7392),
-          k = R('species'),
+          k = r(7392),
+          M = R('species'),
           D = 'Promise',
           U = C.get,
           G = C.set,
@@ -1824,9 +1824,9 @@
           Q = A(D, function () {
             var t = E(z),
               n = t !== String(z);
-            if (!n && 66 === M) return !0;
+            if (!n && 66 === k) return !0;
             if (u && !V.finally) return !0;
-            if (M >= 51 && /native code/.test(t)) return !1;
+            if (k >= 51 && /native code/.test(t)) return !1;
             var r = new z(function (t) {
                 t(1);
               }),
@@ -1836,11 +1836,11 @@
                   function () {}
                 );
               };
-            return ((r.constructor = {})[k] = e), !($ = r.then(function () {}) instanceof e) || (!n && j && !J);
+            return ((r.constructor = {})[M] = e), !($ = r.then(function () {}) instanceof e) || (!n && j && !J);
           }),
           tt =
             Q ||
-            !S(function (t) {
+            !x(function (t) {
               z.all(t).catch(function () {});
             }),
           nt = function (t) {
@@ -1883,7 +1883,7 @@
               !J && (o = s['on' + t]) ? o(e) : t === K && L('Unhandled promise rejection', r);
           },
           ot = function (t) {
-            w.call(s, function () {
+            S.call(s, function () {
               var n,
                 r = t.facade,
                 e = t.value;
@@ -1902,7 +1902,7 @@
             return 1 !== t.rejection && !t.parent;
           },
           at = function (t) {
-            w.call(s, function () {
+            S.call(s, function () {
               var n = t.facade;
               P ? Y.emit('rejectionHandled', n) : et('rejectionhandled', n, t.value);
             });
@@ -1961,7 +1961,7 @@
           }).prototype = d(V, {
             then: function (t, n) {
               var r = F(this),
-                e = q(x(this, z));
+                e = q(w(this, z));
               return (
                 (e.ok = 'function' != typeof t || t),
                 (e.fail = 'function' == typeof n && n),
@@ -2153,9 +2153,9 @@
           b = r(30),
           E = r(1956),
           T = r(8006),
-          S = r(1156),
-          x = r(5181),
-          w = r(1236),
+          x = r(1156),
+          w = r(5181),
+          S = r(1236),
           _ = r(3070),
           O = r(5296),
           L = r(8880),
@@ -2166,8 +2166,8 @@
           R = r(9711),
           j = r(5112),
           P = r(6061),
-          M = r(7235),
-          k = r(8003),
+          k = r(7235),
+          M = r(8003),
           D = r(9909),
           U = r(2092).forEach,
           G = C('hidden'),
@@ -2178,9 +2178,9 @@
           X = Object.prototype,
           H = o.Symbol,
           Y = i('JSON', 'stringify'),
-          q = w.f,
+          q = S.f,
           Z = _.f,
-          W = S.f,
+          W = x.f,
           J = O.f,
           K = N('symbols'),
           $ = N('op-symbols'),
@@ -2301,9 +2301,9 @@
           }),
           (O.f = st),
           (_.f = ct),
-          (w.f = ft),
-          (T.f = S.f = lt),
-          (x.f = pt),
+          (S.f = ft),
+          (T.f = x.f = lt),
+          (w.f = pt),
           (P.f = function (t) {
             return it(j(t), t);
           }),
@@ -2317,7 +2317,7 @@
             a || I(X, 'propertyIsEnumerable', st, { unsafe: !0 }))),
           e({ global: !0, wrap: !0, forced: !u, sham: !u }, { Symbol: H }),
           U(E(nt), function (t) {
-            M(t);
+            k(t);
           }),
           e(
             { target: F, stat: !0, forced: !u },
@@ -2357,12 +2357,12 @@
               target: 'Object',
               stat: !0,
               forced: f(function () {
-                x.f(1);
+                w.f(1);
               }),
             },
             {
               getOwnPropertySymbols: function (t) {
-                return x.f(v(t));
+                return w.f(v(t));
               },
             }
           ),
@@ -2394,7 +2394,7 @@
               }
             ),
           H.prototype[B] || L(H.prototype, B, H.prototype.valueOf),
-          k(H, F),
+          M(H, F),
           (A[G] = !0);
       },
       3948: function (t, n, r) {
@@ -2459,7 +2459,7 @@
           });
         o.push([
           t.id,
-          "@charset \"utf-8\";\r\nhtml,\r\nbody,\r\ndiv,\r\nspan,\r\nh1,\r\nh2,\r\np,\r\ni,\r\nul,\r\nli,\r\narticle,\r\ncanvas,\r\nheader {\r\n  margin: 0;\r\n  padding: 0;\r\n  border: 0;\r\n  font-size: 100%;\r\n  font: inherit;\r\n  vertical-align: baseline;\r\n}\r\nul {\r\n  list-style: none;\r\n}\r\nhtml,\r\nbody {\r\n  height: 100%;\r\n  font-family: 'Noto Sans KR', sans-serif;\r\n}\r\nbutton {\r\n  margin: 0;\r\n  padding: 0;\r\n  border: 0;\r\n  font-family: 'Noto Sans KR', sans-serif;\r\n  -webkit-tap-highlight-color: transparent;\r\n  cursor: pointer;\r\n}\r\nbutton > span {\r\n  position: relative;\r\n}\r\nbutton:focus {\r\n  outline: none;\r\n}\r\nbody.tab :focus {\r\n  outline: #f0a solid 5px;\r\n}\r\n",
+          "@charset \"utf-8\";\r\nhtml,\r\nbody,\r\ndiv,\r\nspan,\r\nh1,\r\nh2,\r\np,\r\ni,\r\nul,\r\nli,\r\narticle,\r\ncanvas,\r\nheader {\r\n  margin: 0;\r\n  padding: 0;\r\n  border: 0;\r\n  font-size: 100%;\r\n  font: inherit;\r\n  vertical-align: baseline;\r\n}\r\nul {\r\n  list-style: none;\r\n}\r\nhtml,\r\nbody {\r\n  height: 100%;\r\n  font-family: 'Noto Sans KR', sans-serif;\r\n}\r\nbutton {\r\n  margin: 0;\r\n  padding: 0;\r\n  border: 0;\r\n  font-family: 'Noto Sans KR', sans-serif;\r\n  -webkit-tap-highlight-color: transparent;\r\n  cursor: pointer;\r\n}\r\nbutton > span {\r\n  position: relative;\r\n}\r\nbutton:focus {\r\n  outline: none;\r\n}\r\nbody.tab :focus {\r\n  outline: #f0a solid 5px;\r\n}\r\n\r\n.ir {\r\n  position: absolute;\r\n  z-index: -1;\r\n  top: 50%;\r\n  left: 50%;\r\n  width: 100%;\r\n  transform: translate(-50%, -50%);\r\n}\r\n",
           '',
         ]),
           (n.Z = o);
@@ -2472,7 +2472,7 @@
           });
         o.push([
           t.id,
-          '@charset "utf-8";\r\n/* \r\n  1 표시 display visibility\r\n  2 넘침 overflow -\r\n  3 흐름 float\r\n  4 위치 position top, right, left, bottom, z-index\r\n  5 크기 width & height -\r\n  6 갂격 margin & padding\r\n  7 테두리 border\r\n  8 배경 background\r\n  9 폰트 font\r\n  10 기타\r\n*/\r\n\r\n/* SECTION */\r\n.wrap {\r\n  height: 100%;\r\n}\r\n.header {\r\n  position: relative;\r\n  height: 10%;\r\n  background-color: #0f60b6;\r\n}\r\n.main {\r\n  height: 90%;\r\n}\r\n\r\n/* HEADER*/\r\n.header__title {\r\n  position: absolute;\r\n  top: 50%;\r\n  left: 50%;\r\n  color: #fff;\r\n  font-size: 3rem;\r\n  transform: translate(-50%, -50%);\r\n}\r\n.header__btn {\r\n  position: absolute;\r\n  top: 50%;\r\n  right: 5%;\r\n  padding: 1rem;\r\n  border-radius: 50%;\r\n  background-color: transparent;\r\n  line-height: 1;\r\n  transform: translateY(-50%);\r\n}\r\n.header__btn:hover,\r\n.header__btn:active {\r\n  background-color: #2f78c5;\r\n  color: #ddd;\r\n}\r\n.header__icon {\r\n  font-size: 1.5rem;\r\n  color: #fff;\r\n}\r\n\r\n/* MAIN */\r\n.roulette {\r\n  height: 100%;\r\n}\r\n.roulette__canvas {\r\n  display: block;\r\n  width: 100%;\r\n  height: 90%;\r\n}\r\n.roulette__btn {\r\n  width: 100%;\r\n  height: 10%;\r\n  background-color: #0f60b6;\r\n  color: #fff;\r\n  font-size: 3rem;\r\n  font-weight: bold;\r\n}\r\n.roulette__btn:hover,\r\n.roulette__btn:active,\r\n.roulette__btn--isInActivated {\r\n  background-color: #2f78c5;\r\n  color: #ddd;\r\n}\r\n.roulette__btn--isInActivated {\r\n  cursor: default;\r\n}\r\n\r\n/* 대화상자 */\r\n.dialog {\r\n  position: absolute;\r\n  z-index: 1;\r\n  top: 50%;\r\n  left: 50%;\r\n  width: 360px;\r\n  transform: translate(-50%, -50%);\r\n  text-align: center;\r\n}\r\n.dialog--isVisible {\r\n  display: block;\r\n}\r\n.dialog__title,\r\n.dialog__btn {\r\n  font-size: 2rem;\r\n  color: #fff;\r\n  line-height: 2;\r\n  background-color: #0f60b6;\r\n}\r\n.dialog__title {\r\n}\r\n.dialog__btn {\r\n  width: 100%;\r\n}\r\n.dialog__content {\r\n  background-color: rgba(238, 238, 238, 0.8);\r\n}\r\n.dialog__desc {\r\n  margin: 0;\r\n  padding: 1rem;\r\n  font-size: 3rem;\r\n  font-weight: bold;\r\n  line-height: 3;\r\n}\r\n.dialog__desc--isInvisible,\r\n.dialog-list--isInvisible {\r\n  display: none;\r\n}\r\n.dialog-list {\r\n  overflow: auto;\r\n  height: 350px;\r\n}\r\n.dialog-list--sub {\r\n  display: none;\r\n}\r\n.dialog-list--isVisible {\r\n  display: block;\r\n}\r\n.dialog-list__btn {\r\n  width: 50%;\r\n  background-color: transparent;\r\n}\r\n.dialog-list__name {\r\n  border-bottom: 2px solid #000;\r\n  font-size: 1.5rem;\r\n  font-weight: bold;\r\n  line-height: 2.5;\r\n}\r\n.dialog-list__name--isClicked {\r\n  border-color: #0c7d1a;\r\n  color: #0c7d1a;\r\n}\r\n.dialog-list__name--sub {\r\n  border-bottom: 0;\r\n  line-height: 2;\r\n}\r\n.dialog-list__name--sub-isClicked {\r\n  position: relative;\r\n  color: #ce2070;\r\n}\r\n.dialog-list__icon {\r\n  display: none;\r\n  position: absolute;\r\n  top: 50%;\r\n  transform: translateY(-50%);\r\n  font-size: 1rem;\r\n}\r\n.dialog-list__name--sub-isClicked > .dialog-list__icon {\r\n  display: inline;\r\n}\r\n.dialog__btn:hover,\r\n.dialog__btn:active {\r\n  background-color: #2f78c5;\r\n  color: #ddd;\r\n}\r\n\r\n/* 모달리스 */\r\n.modeless {\r\n  position: absolute;\r\n  left: 0;\r\n  top: 0;\r\n  right: 0;\r\n  bottom: 0;\r\n  background-color: #fff;\r\n  opacity: 0.5;\r\n  content: \'\';\r\n}\r\n\r\n/* 미디어 쿼리 Media Query */\r\n@media screen and (orientation: portrait) {\r\n  .header__title,\r\n  .roulette__btn {\r\n    font-size: 2rem;\r\n  }\r\n  .roulette__canvas {\r\n    height: 80%;\r\n  }\r\n  .roulette__btn {\r\n    height: 20%;\r\n  }\r\n  /*\r\n    모바일 브라우저에서는 hover 효과가 지속되므로 기존 색으로 덮어 주었습니다.\r\n  */\r\n  .header__btn:hover,\r\n  .header__btn:active,\r\n  .roulette__btn:hover,\r\n  .roulette__btn:active,\r\n  .dialog__btn:hover,\r\n  .dialog__btn:active {\r\n    background-color: #0f60b6;\r\n    color: #fff;\r\n  }\r\n}\r\n',
+          "@charset \"utf-8\";\r\n/* \r\n  1 표시 display visibility\r\n  2 넘침 overflow -\r\n  3 흐름 float\r\n  4 위치 position top, right, left, bottom, z-index\r\n  5 크기 width & height -\r\n  6 갂격 margin & padding\r\n  7 테두리 border\r\n  8 배경 background\r\n  9 폰트 font\r\n  10 기타\r\n*/\r\n\r\n/* SECTION */\r\n.wrap {\r\n  height: 100%;\r\n}\r\n.header {\r\n  position: relative;\r\n  height: 10%;\r\n  background-color: #0f60b6;\r\n}\r\n.main {\r\n  height: 90%;\r\n}\r\n\r\n/* HEADER*/\r\n.header__title {\r\n  position: absolute;\r\n  top: 50%;\r\n  left: 50%;\r\n  color: #fff;\r\n  font-size: 3rem;\r\n  transform: translate(-50%, -50%);\r\n}\r\n.header__btn {\r\n  overflow: hidden;\r\n  position: absolute;\r\n  top: 50%;\r\n  right: 5%;\r\n  width: 57px;\r\n  height: 57px;\r\n  border-radius: 50%;\r\n  background-color: #0f60b6;\r\n  font-size: 1.5rem;\r\n  color: #fff;\r\n  line-height: 1;\r\n  transform: translateY(-50%);\r\n}\r\n.header__btn::after {\r\n  display: none;\r\n  position: absolute;\r\n  left: 0;\r\n  top: 0;\r\n  right: 0;\r\n  bottom: 0;\r\n  background-color: rgba(255, 255, 255, 0.2);\r\n  content: '';\r\n}\r\n.header__btn:hover::after,\r\n.header__btn:active::after {\r\n  display: block;\r\n}\r\n.header__icon {\r\n  width: 100%;\r\n  height: 100%;\r\n  background-color: #0f60b6;\r\n  line-height: 57px;\r\n}\r\n\r\n/* MAIN */\r\n.roulette {\r\n  height: 100%;\r\n}\r\n.roulette__canvas {\r\n  display: block;\r\n  width: 100%;\r\n  height: 90%;\r\n}\r\n.roulette__btn {\r\n  width: 100%;\r\n  height: 10%;\r\n  background-color: #0f60b6;\r\n  color: #fff;\r\n  font-size: 3rem;\r\n  font-weight: bold;\r\n}\r\n.roulette__btn:hover,\r\n.roulette__btn:active,\r\n.roulette__btn--isInActivated {\r\n  background-color: #2f78c5;\r\n  color: #ddd;\r\n}\r\n.roulette__btn--isInActivated {\r\n  cursor: default;\r\n}\r\n\r\n/* 대화상자 */\r\n.dialog {\r\n  position: absolute;\r\n  z-index: 1;\r\n  top: 50%;\r\n  left: 50%;\r\n  width: 360px;\r\n  transform: translate(-50%, -50%);\r\n  text-align: center;\r\n}\r\n.dialog--isVisible {\r\n  display: block;\r\n}\r\n.dialog__title,\r\n.dialog__btn {\r\n  font-size: 2rem;\r\n  color: #fff;\r\n  line-height: 2;\r\n  background-color: #0f60b6;\r\n}\r\n.dialog__title {\r\n}\r\n.dialog__btn {\r\n  width: 100%;\r\n}\r\n.dialog__content {\r\n  background-color: rgba(238, 238, 238, 0.8);\r\n}\r\n.dialog__desc {\r\n  margin: 0;\r\n  padding: 1rem;\r\n  font-size: 3rem;\r\n  font-weight: bold;\r\n  line-height: 3;\r\n}\r\n.dialog__desc--isInvisible,\r\n.dialog-list--isInvisible {\r\n  display: none;\r\n}\r\n.dialog-list {\r\n  overflow: auto;\r\n  height: 350px;\r\n}\r\n.dialog-list--sub {\r\n  display: none;\r\n}\r\n.dialog-list--isVisible {\r\n  display: block;\r\n}\r\n.dialog-list__btn {\r\n  width: 50%;\r\n  background-color: transparent;\r\n}\r\n.dialog-list__name {\r\n  border-bottom: 2px solid #000;\r\n  font-size: 1.5rem;\r\n  font-weight: bold;\r\n  line-height: 2.5;\r\n}\r\n.dialog-list__name--isClicked {\r\n  border-color: #0c7d1a;\r\n  color: #0c7d1a;\r\n}\r\n.dialog-list__name--sub {\r\n  border-bottom: 0;\r\n  line-height: 2;\r\n}\r\n.dialog-list__name--sub-isClicked {\r\n  position: relative;\r\n  color: #ce2070;\r\n}\r\n.dialog-list__icon {\r\n  display: none;\r\n  position: absolute;\r\n  top: 50%;\r\n  transform: translateY(-50%);\r\n  font-size: 1rem;\r\n}\r\n.dialog-list__name--sub-isClicked > .dialog-list__icon {\r\n  display: inline;\r\n}\r\n.dialog__btn:hover,\r\n.dialog__btn:active {\r\n  background-color: #2f78c5;\r\n  color: #ddd;\r\n}\r\n\r\n/* 모달리스 */\r\n.modeless {\r\n  position: absolute;\r\n  left: 0;\r\n  top: 0;\r\n  right: 0;\r\n  bottom: 0;\r\n  background-color: #fff;\r\n  opacity: 0.5;\r\n  content: '';\r\n}\r\n\r\n/* 미디어 쿼리 Media Query */\r\n@media screen and (orientation: portrait) {\r\n  .header__title,\r\n  .roulette__btn {\r\n    font-size: 2rem;\r\n  }\r\n  .roulette__canvas {\r\n    height: 80%;\r\n  }\r\n  .roulette__btn {\r\n    height: 20%;\r\n  }\r\n  /*\r\n    모바일 브라우저에서는 hover 효과가 지속되므로 기존 색으로 덮어 주었습니다.\r\n  */\r\n  .header__btn:hover,\r\n  .header__btn:active,\r\n  .roulette__btn:hover,\r\n  .roulette__btn:active,\r\n  .dialog__btn:hover,\r\n  .dialog__btn:active {\r\n    background-color: #0f60b6;\r\n    color: #fff;\r\n  }\r\n}\r\n",
           '',
         ]),
           (n.Z = o);
@@ -2588,15 +2588,15 @@
           var E = Object.getPrototypeOf,
             T = E && E(E(N([])));
           T && T !== r && e.call(T, i) && (b = T);
-          var S = (m.prototype = y.prototype = Object.create(b));
-          function x(t) {
+          var x = (m.prototype = y.prototype = Object.create(b));
+          function w(t) {
             ['next', 'throw', 'return'].forEach(function (n) {
               u(t, n, function (t) {
                 return this._invoke(n, t);
               });
             });
           }
-          function w(t, n) {
+          function S(t, n) {
             function r(o, i, a, c) {
               var u = f(t[o], t, i);
               if ('throw' !== u.type) {
@@ -2690,7 +2690,7 @@
             return { value: n, done: !0 };
           }
           return (
-            (g.prototype = S.constructor = m),
+            (g.prototype = x.constructor = m),
             (m.constructor = g),
             (g.displayName = u(m, c, 'GeneratorFunction')),
             (t.isGeneratorFunction = function (t) {
@@ -2700,33 +2700,33 @@
             (t.mark = function (t) {
               return (
                 Object.setPrototypeOf ? Object.setPrototypeOf(t, m) : ((t.__proto__ = m), u(t, c, 'GeneratorFunction')),
-                (t.prototype = Object.create(S)),
+                (t.prototype = Object.create(x)),
                 t
               );
             }),
             (t.awrap = function (t) {
               return { __await: t };
             }),
-            x(w.prototype),
-            (w.prototype[a] = function () {
+            w(S.prototype),
+            (S.prototype[a] = function () {
               return this;
             }),
-            (t.AsyncIterator = w),
+            (t.AsyncIterator = S),
             (t.async = function (n, r, e, o, i) {
               void 0 === i && (i = Promise);
-              var a = new w(s(n, r, e, o), i);
+              var a = new S(s(n, r, e, o), i);
               return t.isGeneratorFunction(r)
                 ? a
                 : a.next().then(function (t) {
                     return t.done ? t.value : a.next();
                   });
             }),
-            x(S),
-            u(S, c, 'Generator'),
-            (S[i] = function () {
+            w(x),
+            u(x, c, 'Generator'),
+            (x[i] = function () {
               return this;
             }),
-            (S.toString = function () {
+            (x.toString = function () {
               return '[object Generator]';
             }),
             (t.keys = function (t) {
@@ -3296,7 +3296,7 @@
         return e;
       }
       r(7042), r(8309), r(1038), r(8783), r(2165), r(6992), r(3948);
-      var S = {
+      var x = {
         MODELESS_DIALOG: document.createElement('div'),
         MODELESS: document.createElement('div'),
         CONTAINER: document.createElement('article'),
@@ -3438,7 +3438,7 @@
           document.body.removeChild(t);
         },
       };
-      function x(t, n, r, e, o, i, a) {
+      function w(t, n, r, e, o, i, a) {
         try {
           var c = t[i](a),
             u = c.value;
@@ -3447,17 +3447,17 @@
         }
         c.done ? n(u) : Promise.resolve(u).then(e, o);
       }
-      function w(t) {
+      function S(t) {
         return function () {
           var n = this,
             r = arguments;
           return new Promise(function (e, o) {
             var i = t.apply(n, r);
             function a(t) {
-              x(i, e, o, a, c, 'next', t);
+              w(i, e, o, a, c, 'next', t);
             }
             function c(t) {
-              x(i, e, o, a, c, 'throw', t);
+              w(i, e, o, a, c, 'throw', t);
             }
             a(void 0);
           });
@@ -3466,13 +3466,13 @@
       function _() {
         var t = !0;
         return (
-          (b.rouletteIsSpinning() || S.isOpen()) &&
-            (b.rouletteIsSpinning() ? S.alert('알림', '회전 중...') : S.handleClose(), (t = !1)),
+          (b.rouletteIsSpinning() || x.isOpen()) &&
+            (b.rouletteIsSpinning() ? x.alert('알림', '회전 중...') : x.handleClose(), (t = !1)),
           t
         );
       }
       function O() {
-        return (O = w(
+        return (O = S(
           regeneratorRuntime.mark(function t() {
             var n, r, e;
             return regeneratorRuntime.wrap(
@@ -3490,7 +3490,7 @@
                     case 6:
                       return (t.next = 8), n.json();
                     case 8:
-                      (r = t.sent), (e = r), S.setList(e), S.set(), (t.next = 17);
+                      (r = t.sent), (e = r), x.setList(e), x.set(), (t.next = 17);
                       break;
                     case 14:
                       (t.prev = 14), (t.t0 = t.catch(0)), console.log(t.t0);
@@ -3516,11 +3516,11 @@
           b.init(), b.drawRoulette();
         }),
         b.init(),
-        S.init();
+        x.init();
       var L = document.getElementById('btnRouletteStart');
       L.addEventListener('click', function () {
         if (_())
-          if (b.rouletteIsEmpty()) S.alert('알림', '룰렛 설정 필수!');
+          if (b.rouletteIsEmpty()) x.alert('알림', '룰렛 설정 필수!');
           else {
             var t = 'roulette__btn--isInActivated';
             L.classList.add(t), b.resetRoulette(), b.spinRoulette();
@@ -3528,7 +3528,7 @@
               if (!b.rouletteIsSpinning()) {
                 L.classList.remove(t);
                 var r = b.getRouletteResult();
-                S.alert('결과', r), clearInterval(n);
+                x.alert('결과', r), clearInterval(n);
               }
             }, 1e3);
           }
@@ -3536,7 +3536,7 @@
         document.getElementById('btnRouletteAdd').addEventListener('click', function () {
           var t;
           _() &&
-            (S.listIsEmpty()
+            (x.listIsEmpty()
               ? window.fetch
                 ? (function () {
                     O.apply(this, arguments);
@@ -3548,14 +3548,14 @@
                     try {
                       t.readyState === XMLHttpRequest.DONE &&
                         (200 === t.status
-                          ? (S.setList(JSON.parse(t.response)), S.set())
+                          ? (x.setList(JSON.parse(t.response)), x.set())
                           : console.log('request 문제 발생'));
                     } catch (t) {
                       console.log('Caught Exception: ' + t.description);
                     }
                   }))
                 : console.log('XMLHTTP 생성 불가')
-              : S.set());
+              : x.set());
         });
     })();
 })();
