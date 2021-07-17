@@ -3480,7 +3480,7 @@
                 for (;;)
                   switch ((t.prev = t.next)) {
                     case 0:
-                      return (t.prev = 0), (t.next = 3), fetch('/district.json');
+                      return (t.prev = 0), (t.next = 3), fetch('./district.json');
                     case 3:
                       if ((n = t.sent).ok) {
                         t.next = 6;
@@ -3542,7 +3542,7 @@
                     O.apply(this, arguments);
                   })()
                 : (t = new XMLHttpRequest())
-                ? (t.open('GET', '/district.json'),
+                ? (t.open('GET', './district.json'),
                   t.send(),
                   (t.onreadystatechange = function () {
                     try {
