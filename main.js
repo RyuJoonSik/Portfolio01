@@ -3466,7 +3466,7 @@
       }
       if ('serviceWorker' in navigator)
         try {
-          navigator.serviceWorker.register('serviceWorker.js'), console.log('Service Worker Registered');
+          navigator.serviceWorker.register('./serviceWorker.js'), console.log('Service Worker Registered');
         } catch (t) {
           console.log('Service Worker Registration Failed');
         }
