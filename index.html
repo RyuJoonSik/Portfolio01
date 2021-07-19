@@ -16,20 +16,26 @@
     <meta property="og:type" content="website" />
     <meta property="og:title" content="목적지 룰렛" />
     <meta property="og:description" content="목적지 룰렛 입니다." />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <!-- <meta name="apple-mobile-web-app-capable" content="yes" /> -->
     <!-- 주소창 등의 웹 브라우저 UI를 표시하지 않기 -->
-    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <!-- <meta name="apple-mobile-web-app-capable" content="yes" /> -->
     <!-- 상태 바의 스타일을 지정 -->
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <!-- <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" /> -->
     <!-- 홈 화면에서 표시되는 앱 이름을 지정 -->
-    <meta name="apple-mobile-web-app-title" content="Roulette" />
+    <!-- <meta name="apple-mobile-web-app-title" content="Roulette" /> -->
     <!-- 홈 화면에서 표시되는 앱 아이콘을 지정 -->
-    <link rel="apple-touch-icon" href="./android-chrome-192x192.png" />
+    <!-- <link rel="apple-touch-icon" href="/src/assets/icon/android-chrome-192x192.png" /> -->
     <title>목적지 룰렛</title>
     <link rel="manifest" href="./manifest.json" />
-    <link rel="shortcut icon" href="./favicon.ico" />
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="shortcut icon" href="/src/assets/icon/favicon.ico" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
   </head>
   <body>
     <div id="wrap" class="wrap">
@@ -42,8 +48,12 @@
       </header>
       <section class="main">
         <article class="roulette">
-          <canvas id="canvas" class="roulette__canvas"> 현재 브라우저에서는 canvas 태그를 지원하지 않습니다. </canvas>
-          <button id="btnRouletteStart" class="roulette__btn"><span>START</span></button>
+          <canvas id="canvas" class="roulette__canvas">
+            현재 브라우저에서는 canvas 태그를 지원하지 않습니다.
+          </canvas>
+          <button id="btnRouletteStart" class="roulette__btn">
+            <span>START</span>
+          </button>
         </article>
       </section>
     </div>
