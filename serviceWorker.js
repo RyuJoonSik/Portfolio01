@@ -1,4 +1,4 @@
-const ASSETS_URLS = ["./", "./main.js", "./district.json"];
+const ASSETS_URLS = ["./", "./main.js", "./district.json", "./favicon.ico"];
 const CACHE_NAME = "my-cache";
 
 /* 서비스 워커 설치 */
